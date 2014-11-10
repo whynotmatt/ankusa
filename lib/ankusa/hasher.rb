@@ -24,7 +24,9 @@ module Ankusa
 
     def add_text(text)
       if text.instance_of? Array
-        text.each { |t| add_text t }
+        #text.each { |t| add_text t }
+        # if array, use the whole phrase
+        text.each {|t| add_word(t)}
       else
         # replace dashes with spaces, then get rid of non-word/non-space characters,
         # then split by space to get words
